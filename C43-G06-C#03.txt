@@ -1,0 +1,119 @@
+Write a program that takes a number from the user then print yes if that number can be divided by 3 and 4 otherwise print no.
+    Example (1)
+    Input: 12 
+    Output: Yes
+    Example (2)
+    Input: 9 
+    Output: No
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        string input = Console.ReadLine();
+
+
+            if (number % 3 == 0 && number % 4 == 0)
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number.");
+        }
+    }
+}
+
+
+
+
+2- Write a program that allows the user to insert an integer then print negative if it is negative number otherwise print positive.
+    Example (1)
+    Input: -5
+    Output: negative
+    Example (2)
+    Input: 10
+    Output: positive
+
+
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter an integer: ");
+        string input = Console.ReadLine();
+
+        if (int.TryParse(input, out int number))
+        {
+            if (number < 0)
+            {
+                Console.WriteLine("negative");
+            }
+            else
+            {
+                Console.WriteLine("positive");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+        }
+    }
+}
+
+
+
+
+3- Write a program that takes 3 integers from the user then prints the max element and the min element.
+    Example (1)
+    Input:7,8,5
+    Output:
+    max element = 8
+    min element = 5
+    Example (2)
+    Input: 3 6 9
+    Outputs:
+    Max element = 9
+    Min element = 3
+
+
+
+
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter three integers separated by commas: ");
+        string input = Console.ReadLine();
+
+        string[] numbers = input.Split(',');
+
+        if (numbers.Length == 3 &&
+            int.TryParse(numbers[0].Trim(), out int num1) &&
+            int.TryParse(numbers[1].Trim(), out int num2) &&
+            int.TryParse(numbers[2].Trim(), out int num3))
+        {
+            int max = Math.Max(num1, Math.Max(num2, num3));
+            int min = Math.Min(num1, Math.Min(num2, num3));
+
+            Console.WriteLine($"Max element = {max}");
+            Console.WriteLine($"Min element = {min}");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter exactly three integers separated by commas.");
+        }
+    }
+}
